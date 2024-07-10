@@ -1,0 +1,21 @@
+name: CICDJosueAuquilla
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the site in the pruebas container
+    - name: Imprimir mensaje de despliegue
+      run: echo "Desplegando cambios..."
+
+    - name: Empujar cambios al repositorio remoto
+      run: git push origin main
